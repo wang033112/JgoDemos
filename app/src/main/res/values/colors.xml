@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="dark_gray">#808080</color>
+    <color name="light_gray">#c0c0c0</color>
+    <color name="gains_boro">#dcdcdc</color>
+
+    <color name="white">#ffffff</color>
+    <color name="white_smoke">#F5F5F5</color>
+    <color name="transparent">#00000000</color>
+
+</resources>
