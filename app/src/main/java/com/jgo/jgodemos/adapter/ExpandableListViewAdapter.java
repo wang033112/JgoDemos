@@ -27,6 +27,7 @@ public class ExpandableListViewAdapter extends BaseExpandableListAdapter
 
     private Context mContext;
     private List<SampleGroup> sampleGroups;
+    private OnItemClickListener mOnItemClickListener;
 
     public ExpandableListViewAdapter(Context context) {
         this.mContext = context;
@@ -131,6 +132,12 @@ public class ExpandableListViewAdapter extends BaseExpandableListAdapter
         TextView sampleTitle = view.findViewById(R.id.sample_title);
         sampleTitle.setText(sample.name);
 
+        view.setOnClickListener((v) -> {
+            if (mOnItemClickListener != null) {
+                mOnItemClickListener.onChildItemtClick(sample.name);
+            }
+        });
+
         /*boolean canDownload = getDownloadUnsupportedStringId(sample) == 0;
         boolean isDownloaded = canDownload && downloadTracker.isDownloaded(((UriSample) sample).uri);
         ImageButton downloadButton = view.findViewById(R.id.download_button);
@@ -149,5 +156,16 @@ public class ExpandableListViewAdapter extends BaseExpandableListAdapter
     @Override
     public void onGroupCollapse(int groupPosition) {
         //
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mOnItemClickListener = listener;
+    }
+
+    /**
+     * Listener for item click
+     */
+    public interface OnItemClickListener {
+        void onChildItemtClick(String name);
     }
 }

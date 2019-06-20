@@ -1,5 +1,7 @@
 package com.jgo.jgodemos;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -7,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
@@ -16,7 +19,7 @@ import com.jgo.jgodemos.util.Utils;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ExpandableListViewAdapter.OnItemClickListener {
 
     private static final String JSON_FILE = "home_list.json";
     private TextView mTextMessage;
@@ -58,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         mListView = findViewById(R.id.main_expandable_listview);
         mListAdapter = new ExpandableListViewAdapter(getApplicationContext());
+        mListAdapter.setOnItemClickListener(this);
         mListView.setAdapter(mListAdapter);
         mListView.setGroupIndicator(null);
 
@@ -79,4 +83,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onChildItemtClick(String name) {
+        Intent intent = new Intent();
+        switch (name) {
+            case "ListView_images" :
+                intent.setComponent(new ComponentName("com.jgo.jgodemos","com.jgo.jgodemos.listview.ImageListViewActivity"));
+                break;
+        }
+
+        startActivity(intent);
+    }
 }
