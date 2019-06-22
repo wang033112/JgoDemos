@@ -4,4 +4,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="bg_corners">5dp</dimen>
+
+    <!-- image_list_view -->
+    <dimen name="image_list_view_item_height">100dp</dimen>
+    <dimen name="image_list_view_item_margin">10dp</dimen>
 </resources>
