@@ -21,7 +21,7 @@ import com.jgo.jgodemos.R;
 
 public class RoundCornerLayout extends LinearLayout {
 
-    private static float DEFAULT_RADIUS = 30f;
+    private static final float DEFAULT_RADIUS = 30f;
     private float mTopLeftRadius;
     private float mTopRightRadius;
     private float mBottomLeftRadius;
