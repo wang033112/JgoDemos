@@ -1,4 +1,4 @@
-package com.jgo.jgodemos.data;
+package com.jgo.demos.data;
 
 /**
  * Created by ke-oh on 2019/06/15.

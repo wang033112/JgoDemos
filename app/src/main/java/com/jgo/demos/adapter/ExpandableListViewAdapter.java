@@ -1,4 +1,4 @@
-package com.jgo.jgodemos.adapter;
+package com.jgo.demos.adapter;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
@@ -10,9 +10,9 @@ import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jgo.jgodemos.R;
-import com.jgo.jgodemos.data.Sample;
-import com.jgo.jgodemos.data.SampleGroup;
+import com.jgo.demos.R;
+import com.jgo.demos.data.Sample;
+import com.jgo.demos.data.SampleGroup;
 
 import java.util.Collections;
 import java.util.List;

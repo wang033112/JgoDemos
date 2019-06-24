@@ -1,4 +1,4 @@
-package com.jgo.jgodemos;
+package com.jgo.demos;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -9,13 +9,12 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
-import com.jgo.jgodemos.adapter.ExpandableListViewAdapter;
-import com.jgo.jgodemos.data.SampleGroup;
-import com.jgo.jgodemos.util.Utils;
+import com.jgo.demos.adapter.ExpandableListViewAdapter;
+import com.jgo.demos.data.SampleGroup;
+import com.jgo.demos.util.Utils;
 
 import java.util.ArrayList;
 
@@ -87,8 +86,8 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
     public void onChildItemtClick(String name) {
         Intent intent = new Intent();
         switch (name) {
-            case "ListView_images" :
-                intent.setComponent(new ComponentName("com.jgo.jgodemos","com.jgo.jgodemos.listview.ImageListViewActivity"));
+            case "landscape" :
+                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.ImageListViewActivity"));
                 break;
         }
 

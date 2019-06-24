@@ -1,4 +1,4 @@
-package com.jgo.jgodemos.listview.adapter;
+package com.jgo.demos.listview.adapter;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.jgo.jgodemos.R;
-import com.jgo.jgodemos.listview.data.ImageData;
+import com.jgo.demos.R;
+import com.jgo.demos.listview.data.ImageData;
 
 import java.util.ArrayList;
 import java.util.List;

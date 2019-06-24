@@ -1,4 +1,4 @@
-package com.jgo.jgodemos;
+package com.jgo.demos;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

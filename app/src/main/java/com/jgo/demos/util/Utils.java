@@ -1,4 +1,4 @@
-package com.jgo.jgodemos.util;
+package com.jgo.demos.util;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,7 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import com.jgo.jgodemos.data.SampleGroup;
+import com.jgo.demos.data.SampleGroup;
 
 import java.io.BufferedReader;
 import java.io.IOException;

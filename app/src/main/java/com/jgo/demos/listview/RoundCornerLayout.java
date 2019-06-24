@@ -1,4 +1,4 @@
-package com.jgo.jgodemos.listview;
+package com.jgo.demos.listview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-import com.jgo.jgodemos.R;
+import com.jgo.demos.R;
 
 /**
  * Created by ke-oh on 2019/06/20.

@@ -1,4 +1,4 @@
-package com.jgo.jgodemos.listview.data;
+package com.jgo.demos.listview.data;
 
 /**
  * Created by ke-oh on 2019/06/16.

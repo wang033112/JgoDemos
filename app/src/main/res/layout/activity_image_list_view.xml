@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jgo.jgodemos.MainActivity">
+    tools:context="com.jgo.demos.com.jgo.demos.MainActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/image_list_view"

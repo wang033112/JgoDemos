@@ -1,4 +1,4 @@
-package com.jgo.jgodemos.data;
+package com.jgo.demos.data;
 
 import java.util.ArrayList;
 import java.util.List;

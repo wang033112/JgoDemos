@@ -1,4 +1,4 @@
-package com.jgo.jgodemos;
+package com.jgo.demos;
 
 import org.junit.Test;
 

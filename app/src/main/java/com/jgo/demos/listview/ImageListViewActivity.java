@@ -1,4 +1,4 @@
-package com.jgo.jgodemos.listview;
+package com.jgo.demos.listview;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,9 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.jgo.jgodemos.R;
-import com.jgo.jgodemos.listview.adapter.ImageRecyclerViewAdapter;
-import com.jgo.jgodemos.listview.data.ImageData;
+import com.jgo.demos.listview.adapter.ImageRecyclerViewAdapter;
+import com.jgo.demos.listview.data.ImageData;
+import com.jgo.demos.R;
 
 import java.util.ArrayList;
 import java.util.List;
