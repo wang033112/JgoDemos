@@ -23,6 +23,11 @@
             android:name="com.jgo.demos.listview.ImageListViewActivity"
             android:launchMode="standard">
         </activity>
+
+        <activity
+            android:name="com.jgo.demos.listview.PersonListActivity"
+            android:launchMode="standard">
+        </activity>
     </application>
 
 </manifest>

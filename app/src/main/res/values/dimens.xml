@@ -14,4 +14,7 @@
     <dimen name="image_list_view_subitem_image_size">45dp</dimen>
     <dimen name="image_list_view_subitem_margin_top">8dp</dimen>
     <dimen name="image_list_view_subitem_text_margin_start_end">5dp</dimen>
+
+    <dimen name="person_list_view_img_size">40dp</dimen>
+    <dimen name="person_list_view_img_radius">20dp</dimen>
 </resources>

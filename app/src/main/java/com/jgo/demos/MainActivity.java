@@ -89,6 +89,10 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
             case "landscape" :
                 intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.ImageListViewActivity"));
                 break;
+
+            case "PersonList" :
+                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.PersonListActivity"));
+                break;
         }
 
         startActivity(intent);

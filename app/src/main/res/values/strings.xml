@@ -9,4 +9,7 @@
     <string name="list_view_subitem_content_second">Zion Williamson is one of the most unique athletes to come through the college ranks in recent history and had the freshman season to match, emerging as one of the nation’s most efficient scorers and electric two-way players.</string>
     <string name="list_view_subitem_content_third">Yao Ming is a Chinese basketball executive and retired professional basketball player who played for the Shanghai Sharks of the Chinese Basketball Association (CBA) and the Houston Rockets of the National Basketball Association (NBA). </string>
 
+    <string name="person_list_content_y_m">Yao Ming (Chinese: 姚明; born September 12, 1980) is a Chinese basketball executive and retired professional basketball player who played for the Shanghai Sharks of the Chinese Basketball Association (CBA) and the Houston Rockets of the National Basketball Association (NBA).</string>
+    <string name="person_list_content_more">More</string>
+
 </resources>

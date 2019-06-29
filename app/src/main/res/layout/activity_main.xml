@@ -5,13 +5,13 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jgo.demos.com.jgo.demos.MainActivity">
+    tools:context="com.jgo.demos.MainActivity">
 
     <ExpandableListView
         android:id="@+id/main_expandable_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gains_boro"
+        android:background="@color/white"
         android:padding="8dp"
         android:divider="@color/transparent"
         android:layout_above="@+id/navigation">

@@ -1,4 +1,4 @@
-package com.jgo.demos.listview;
+package com.jgo.demos.listview.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
