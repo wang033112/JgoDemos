@@ -10,6 +10,7 @@ public class PersonData {
     private String title;
     private int mipmapId;
     private String content;
+    private boolean isHiddenImg;
 
     public PersonData(String title, int mipmapId) {
         this.title = title;
@@ -38,5 +39,13 @@ public class PersonData {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public boolean isHiddenImg() {
+        return isHiddenImg;
+    }
+
+    public void setHiddenImg(boolean hiddenImg) {
+        isHiddenImg = hiddenImg;
     }
 }

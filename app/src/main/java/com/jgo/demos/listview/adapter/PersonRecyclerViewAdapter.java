@@ -2,6 +2,7 @@ package com.jgo.demos.listview.adapter;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,7 +52,8 @@ public class PersonRecyclerViewAdapter extends RecyclerView.Adapter<PersonRecycl
 
     @Override
     public void onBindViewHolder(RecyclerHolder holder, int position) {
-        //holder.imageView.setText(dataList.get(position));
+
+        holder.cardView.setVisibility(mPersonDatas.get(position).isHiddenImg() ? View.INVISIBLE : View.VISIBLE);
         Glide.with(mContext).load(ContextCompat.getDrawable(mContext, mPersonDatas.get(position).getMipmapId())).into(holder.imageView);
 
         holder.titleTextView.setText(mPersonDatas.get(position).getTitle());
@@ -65,12 +67,50 @@ public class PersonRecyclerViewAdapter extends RecyclerView.Adapter<PersonRecycl
     class RecyclerHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView titleTextView;
+        CardView cardView;
 
         private RecyclerHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.person_list_view_img);
             titleTextView = itemView.findViewById(R.id.person_list_item_title);
+            cardView = itemView.findViewById(R.id.person_list_view_img_parent);
         }
+    }
+
+    /**
+     * whether The item at position is hidden.
+     * @param position
+     * @return
+     */
+    public boolean isImgHiddenAtPosition(int position) {
+        return position < 0 || position >= mPersonDatas.size() || mPersonDatas.get(position).isHiddenImg();
+    }
+
+    /**
+     * Set the image at postion hidden or not.
+     *
+     * @param position position at list
+     * @param isHidden true:hidden
+     */
+    public void setImgHiddenAtPosition(int position, boolean isHidden) {
+        if (position < 0 || position >= mPersonDatas.size()) {
+            return;
+        }
+        mPersonDatas.get(position).setHiddenImg(isHidden);
+        notifyDataSetChanged();
+    }
+
+    /**
+     * Get the image src id at position
+     *
+     * @param position
+     * @return
+     */
+    public int getImgSrcAtPosition(int position) {
+        if (position < 0 || position >= mPersonDatas.size()) {
+            return -1;
+        }
+        return mPersonDatas.get(position).getMipmapId();
     }
 }
 

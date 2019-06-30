@@ -17,4 +17,6 @@
 
     <dimen name="person_list_view_img_size">40dp</dimen>
     <dimen name="person_list_view_img_radius">20dp</dimen>
+    <dimen name="person_list_view_img_top_layout_left_margin">5dp</dimen>
+    <dimen name="person_list_view_img_top_layout_right_margin">10dp</dimen>
 </resources>
