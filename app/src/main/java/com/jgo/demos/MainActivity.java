@@ -93,6 +93,10 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
             case "PersonList" :
                 intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.PersonListActivity"));
                 break;
+
+            case "VideoList" :
+                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.VideoListViewActivity"));
+                break;
         }
 
         startActivity(intent);
