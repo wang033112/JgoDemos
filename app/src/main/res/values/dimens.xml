@@ -23,4 +23,7 @@
 
     <!-- video_list_view -->
     <dimen name="video_list_view_item_height">200dp</dimen>
+    <dimen name="video_list_view_subitem_margin_top">12dp</dimen>
+    <dimen name="video_list_view_subitem_more_size">16sp</dimen>
+    <dimen name="video_list_view_subitem_height">80dp</dimen>
 </resources>

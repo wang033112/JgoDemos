@@ -8,42 +8,38 @@
     android:background="@drawable/listview_image_bg"
     android:orientation="vertical">
 
-  <ImageView android:id="@+id/video_list_view_img"
+  <FrameLayout android:id="@+id/video_texture_view_layout"
       android:layout_width="match_parent"
       android:layout_height="@dimen/video_list_view_item_height"
+      android:background="@color/dark_gray"
       android:layout_centerVertical="true"
-      android:scaleType="fitXY"
       android:gravity="center_vertical"/>
 
     <LinearLayout
         android:id="@+id/list_view_first_item"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/image_list_view_subitem_height"
+        android:layout_height="@dimen/video_list_view_subitem_height"
         android:layout_marginTop="@dimen/image_list_view_subitem_margin_top"
-        android:orientation="horizontal">
+        android:orientation="vertical">
       <TextView
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
           android:layout_marginLeft="@dimen/image_list_view_subitem_text_margin_start_end"
           android:layout_marginRight="@dimen/image_list_view_subitem_text_margin_start_end"
-          android:layout_weight="5"
           android:textColor="@color/dark_gray"
           android:layout_gravity="center"
           android:maxLines="2"
           android:ellipsize="end"
           android:text="@string/list_view_subitem_content_first"/>
 
-      <FrameLayout
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_weight="1">
-
-        <ImageView
-            android:layout_width="@dimen/image_list_view_subitem_image_size"
-            android:layout_height="@dimen/image_list_view_subitem_image_size"
-            android:scaleType="fitXY"
-            android:src="@mipmap/photo_1"/>
-      </FrameLayout>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="@dimen/image_list_view_subitem_text_margin_start_end"
+          android:layout_marginTop="@dimen/video_list_view_subitem_margin_top"
+          android:textColor="@color/dodgerblue"
+          android:textSize="@dimen/video_list_view_subitem_more_size"
+          android:text="@string/person_list_content_more"/>
 
     </LinearLayout>
 </com.jgo.demos.listview.views.RoundCornerLayout>
