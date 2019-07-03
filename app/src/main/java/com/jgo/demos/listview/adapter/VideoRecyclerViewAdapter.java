@@ -189,14 +189,17 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecycler
 
         @Override
         public boolean onTouch(View v, MotionEvent event) {
-            playerActionImg.setVisibility(
-                    playerActionImg.getVisibility() != View.VISIBLE ? View.VISIBLE : View.INVISIBLE);
+            if (mediaPlayer.isPlaying()) {
+                playerActionImg.setVisibility(
+                        playerActionImg.getVisibility() != View.VISIBLE ? View.VISIBLE : View.INVISIBLE);
 
-            mHandler.postDelayed(() -> {
-                if (mediaPlayer.isPlaying()) {
-                    playerActionImg.setVisibility(View.INVISIBLE);
-                }
-            }, 2000);
+                mHandler.postDelayed(() -> {
+                    if (mediaPlayer.isPlaying()) {
+                        playerActionImg.setVisibility(View.INVISIBLE);
+                    }
+                }, 2000);
+            }
+            
             return false;
         }
 
