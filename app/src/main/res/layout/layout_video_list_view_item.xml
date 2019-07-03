@@ -8,38 +8,55 @@
     android:background="@drawable/listview_image_bg"
     android:orientation="vertical">
 
-  <FrameLayout android:id="@+id/video_texture_view_layout"
+  <FrameLayout
       android:layout_width="match_parent"
       android:layout_height="@dimen/video_list_view_item_height"
-      android:background="@color/dark_gray"
-      android:layout_centerVertical="true"
-      android:gravity="center_vertical"/>
-
-    <LinearLayout
-        android:id="@+id/list_view_first_item"
+      android:layout_centerVertical="true">
+    <FrameLayout android:id="@+id/video_texture_view_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/video_list_view_subitem_height"
-        android:layout_marginTop="@dimen/image_list_view_subitem_margin_top"
-        android:orientation="vertical">
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="@dimen/image_list_view_subitem_text_margin_start_end"
-          android:layout_marginRight="@dimen/image_list_view_subitem_text_margin_start_end"
-          android:textColor="@color/dark_gray"
-          android:layout_gravity="center"
-          android:maxLines="2"
-          android:ellipsize="end"
-          android:text="@string/list_view_subitem_content_first"/>
+        android:layout_height="@dimen/video_list_view_item_height"
+        android:background="@color/dark_gray"
+        android:gravity="center_vertical"/>
 
-      <TextView
+    <FrameLayout
+        android:id="@+id/video_list_view_action_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+      <ImageView
+          android:id="@+id/video_list_view_action_img"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="@dimen/image_list_view_subitem_text_margin_start_end"
-          android:layout_marginTop="@dimen/video_list_view_subitem_margin_top"
-          android:textColor="@color/dodgerblue"
-          android:textSize="@dimen/video_list_view_subitem_more_size"
-          android:text="@string/person_list_content_more"/>
+          android:layout_gravity="center"/>
+    </FrameLayout>
 
-    </LinearLayout>
+  </FrameLayout>
+
+  <LinearLayout
+      android:id="@+id/list_view_first_item"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/video_list_view_subitem_height"
+      android:layout_marginTop="@dimen/image_list_view_subitem_margin_top"
+      android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/image_list_view_subitem_text_margin_start_end"
+        android:layout_marginRight="@dimen/image_list_view_subitem_text_margin_start_end"
+        android:textColor="@color/dark_gray"
+        android:layout_gravity="center"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="@string/list_view_subitem_content_first"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/image_list_view_subitem_text_margin_start_end"
+        android:layout_marginTop="@dimen/video_list_view_subitem_margin_top"
+        android:textColor="@color/dodgerblue"
+        android:textSize="@dimen/video_list_view_subitem_more_size"
+        android:text="@string/person_list_content_more"/>
+
+  </LinearLayout>
 </com.jgo.demos.listview.views.RoundCornerLayout>
