@@ -29,8 +29,9 @@ import java.util.List;
  * Created by ke-oh on 2019/07/02.
  *
  */
-public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecyclerViewAdapter.RecyclerHolder>
-                                         {
+public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecyclerViewAdapter.RecyclerHolder> {
+
+    private static final String TAG = VideoRecyclerViewAdapter.class.getSimpleName();
     private Context mContext;
     private List<VideoData> mImageDatas = new ArrayList<>();
     private Handler mHandler;
@@ -66,6 +67,7 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecycler
         //holder.imageView.setText(dataList.get(position));
         //Glide.with(mContext).load(ContextCompat.getDrawable(mContext, mImageDatas.get(position).getMipmapId())).into(holder.textureView);
 
+        holder.tag = String.valueOf(position);
         if (holder.textureView == null) {
             holder.textureView = new TextureView(mContext);
             holder.textureView.setSurfaceTextureListener(holder);
@@ -106,6 +108,7 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecycler
         MediaPlayer mediaPlayer;
         ImageView playerActionImg;
         FrameLayout playerActionLayout;
+        String tag;
 
         boolean isMediaPlayerPrepared;
         boolean isTextureAvailable;
@@ -124,6 +127,7 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecycler
 
         @Override
         public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
+            Log.d(TAG, "onSurfaceTextureAvailable_" + tag);
             isTextureAvailable = true;
             this.surface = surface;
             if (isMediaPlayerPrepared) {
@@ -133,17 +137,19 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecycler
 
         @Override
         public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
-
+            Log.d(TAG, "onSurfaceTextureSizeChanged_" + tag);
         }
 
         @Override
         public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
+            Log.d(TAG, "onSurfaceTextureDestroyed_" + tag);
+            mediaPlayer.setSurface(new Surface(surface));
             return false;
         }
 
         @Override
         public void onSurfaceTextureUpdated(SurfaceTexture surface) {
-
+            Log.d(TAG, "onSurfaceTextureUpdated_" + tag);
         }
 
         @Override
@@ -157,7 +163,8 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecycler
         private void startMediaPlayer() {
             mediaPlayer.setSurface(new Surface(surface));
             playerActionImg.setImageDrawable(mContext.getDrawable(R.drawable.play_back_70dp));
-            //mediaPlayer.start();
+            mediaPlayer.start();
+            mediaPlayer.pause();
         }
 
         @Override
@@ -189,17 +196,16 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecycler
 
         @Override
         public boolean onTouch(View v, MotionEvent event) {
+            playerActionImg.setVisibility(
+                    playerActionImg.getVisibility() != View.VISIBLE ? View.VISIBLE : View.INVISIBLE);
             if (mediaPlayer.isPlaying()) {
-                playerActionImg.setVisibility(
-                        playerActionImg.getVisibility() != View.VISIBLE ? View.VISIBLE : View.INVISIBLE);
-
                 mHandler.postDelayed(() -> {
                     if (mediaPlayer.isPlaying()) {
                         playerActionImg.setVisibility(View.INVISIBLE);
                     }
                 }, 2000);
             }
-            
+
             return false;
         }
 
