@@ -14,10 +14,10 @@
     ]
   },
   {
-    "title": "TextView",
+    "title": "Transition",
     "samples": [
       {
-        "name": "TextView_1!"
+        "name": "Activity_transition"
       },
       {
         "name": "TextView_2"

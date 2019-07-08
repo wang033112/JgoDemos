@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jgo.demos.transition.TransitionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/transition_explode"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/transition_btn_height"
+            android:layout_marginLeft="@dimen/transition_btn_margin_left_right"
+            android:layout_marginRight="@dimen/transition_btn_margin_left_right"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:gravity="center"
+            android:textSize="@dimen/transition_btn_text_size"
+            android:background="@drawable/btn_bg"
+            android:textColor="@color/dodgerblue"
+            android:text="@string/transition_explode"/>
+
+        <TextView
+            android:id="@+id/transition_slide"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/transition_btn_height"
+            android:layout_marginLeft="@dimen/transition_btn_margin_left_right"
+            android:layout_marginRight="@dimen/transition_btn_margin_left_right"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:gravity="center"
+            android:textSize="@dimen/transition_btn_text_size"
+            android:background="@drawable/btn_bg"
+            android:textColor="@color/dodgerblue"
+            android:text="@string/transition_slide"/>
+
+        <TextView
+            android:id="@+id/transition_fade"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/transition_btn_height"
+            android:layout_marginLeft="@dimen/transition_btn_margin_left_right"
+            android:layout_marginRight="@dimen/transition_btn_margin_left_right"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:gravity="center"
+            android:textSize="@dimen/transition_btn_text_size"
+            android:background="@drawable/btn_bg"
+            android:textColor="@color/dodgerblue"
+            android:text="@string/transition_fade"/>
+
+    </LinearLayout>
+
+</FrameLayout>

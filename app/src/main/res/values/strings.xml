@@ -12,4 +12,11 @@
     <string name="person_list_content_y_m">Yao Ming (Chinese: 姚明; born September 12, 1980) is a Chinese basketball executive and retired professional basketball player who played for the Shanghai Sharks of the Chinese Basketball Association (CBA) and the Houston Rockets of the National Basketball Association (NBA).</string>
     <string name="person_list_content_more">More</string>
 
+
+    <!-- transition -->
+    <string name="transition_explode">Explode</string>
+    <string name="transition_slide">Slide</string>
+    <string name="transition_fade">Fade</string>
+    <string name="transition_back">Back_To_Transition_Activity</string>
+
 </resources>
