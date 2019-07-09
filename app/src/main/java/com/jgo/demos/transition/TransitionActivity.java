@@ -8,10 +8,14 @@ import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Explode;
 import android.transition.Fade;
+import android.transition.Scene;
 import android.transition.Slide;
+import android.transition.TransitionManager;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.ImageView;
 
 import com.jgo.demos.R;
 
@@ -28,6 +32,12 @@ public class TransitionActivity extends AppCompatActivity implements View.OnClic
 
     public static final String TRANS_KEY = "trans_key";
 
+    private ViewGroup mSceneContainer;
+    private ImageView mRevertImg;
+    private Scene mSceneFirst;
+    private Scene mSceneSecond;
+    private boolean mIsFirstScene;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +48,13 @@ public class TransitionActivity extends AppCompatActivity implements View.OnClic
         findViewById(R.id.transition_explode).setOnClickListener(this);
         findViewById(R.id.transition_slide).setOnClickListener(this);
         findViewById(R.id.transition_fade).setOnClickListener(this);
+
+        mSceneContainer = findViewById(R.id.scene_container_layout);
+        mSceneFirst = Scene.getSceneForLayout(mSceneContainer, R.layout.transition_scene_first, this);
+        mSceneSecond = Scene.getSceneForLayout(mSceneContainer, R.layout.transition_scene_second, this);
+
+        findViewById(R.id.scene_revert_img).setOnClickListener(this);
+        mIsFirstScene = true;
     }
 
     @Override
@@ -67,6 +84,11 @@ public class TransitionActivity extends AppCompatActivity implements View.OnClic
 
                 intent.putExtra(TRANS_KEY, TRANS_FADE);
                 break;
+            case R.id.scene_revert_img:
+                TransitionManager.go(mIsFirstScene ? mSceneSecond : mSceneFirst);
+                mIsFirstScene = !mIsFirstScene;
+                findViewById(R.id.scene_revert_img).setOnClickListener(this);
+                return;
         }
 
         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());

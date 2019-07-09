@@ -31,9 +31,11 @@
     <dimen name="video_list_view_subitem_more_size">16sp</dimen>
     <dimen name="video_list_view_subitem_height">80dp</dimen>
 
-    <!-- video_list_view -->
+    <!-- transition -->
     <dimen name="transition_btn_margin_left_right">50dp</dimen>
     <dimen name="transition_btn_height">50dp</dimen>
+    <dimen name="transition_title_height">26dp</dimen>
     <dimen name="transition_btn_text_size">14sp</dimen>
+    <dimen name="transition_scene_text_size">16sp</dimen>
 
 </resources>

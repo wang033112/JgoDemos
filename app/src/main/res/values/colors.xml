@@ -9,8 +9,10 @@
 
     <color name="white">#ffffff</color>
     <color name="white_smoke">#F5F5F5</color>
+    <color name="color_background">#e9ebf0</color>
     <color name="transparent">#00000000</color>
     <color name="dodgerblue">#1E90FF</color>
+
 
 
 </resources>

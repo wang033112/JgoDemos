@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/color_background"
+    tools:context="com.jgo.demos.transition.TransitionActivity">
+
+    <LinearLayout
+        android:id="@+id/scene_first_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/scene_from"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/transition_btn_height"
+            android:layout_weight="1"
+            android:background="@drawable/tab_left_bg"
+            android:paddingLeft="@dimen/margin_5dp"
+            android:text="@string/scene_from"
+            android:textColor="@color/white"
+            android:textSize="@dimen/transition_scene_text_size"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/scene_from_station"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/transition_btn_height"
+            android:layout_weight="3"
+            android:layout_marginLeft="0dp"
+            android:gravity="center"
+            android:textSize="@dimen/transition_btn_text_size"
+            android:background="@drawable/tab_right_bg"
+            android:textColor="@color/dodgerblue"
+            android:text="@string/scene_from_station"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_8dp"
+        android:paddingRight="@dimen/margin_8dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/scene_revert_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/revert_35dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/scene_second_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/scene_to"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/transition_btn_height"
+            android:layout_weight="1"
+            android:background="@drawable/tab_left_bg"
+            android:paddingLeft="@dimen/margin_5dp"
+            android:text="@string/scene_to"
+            android:textColor="@color/white"
+            android:textSize="@dimen/transition_scene_text_size"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/scene_to_station"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/transition_btn_height"
+            android:layout_weight="3"
+            android:layout_marginLeft="0dp"
+            android:gravity="center"
+            android:textSize="@dimen/transition_btn_text_size"
+            android:background="@drawable/tab_right_bg"
+            android:textColor="@color/dodgerblue"
+            android:text="@string/scene_to_station"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+</LinearLayout>

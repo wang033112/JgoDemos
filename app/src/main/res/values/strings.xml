@@ -19,4 +19,12 @@
     <string name="transition_fade">Fade</string>
     <string name="transition_back">Back_To_Transition_Activity</string>
 
+    <string name="transition_activity">Activity Transition</string>
+    <string name="scene_activity">Scene Transition</string>
+
+    <string name="scene_from">出発</string>
+    <string name="scene_to">到着</string>
+    <string name="scene_from_station">新宿</string>
+    <string name="scene_to_station">町田</string>
+
 </resources>

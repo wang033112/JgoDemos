@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_background"
     tools:context="com.jgo.demos.transition.TransitionActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8dp"
+        android:padding="@dimen/margin_8dp"
+        android:background="@drawable/listview_title_bg"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/transition_title_height"
+            android:background="@color/white"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:text="@string/transition_activity"
+            android:textColor="@color/dodgerblue"
+            android:gravity="top"
+            />
 
         <TextView
             android:id="@+id/transition_explode"
@@ -17,7 +32,6 @@
             android:layout_height="@dimen/transition_btn_height"
             android:layout_marginLeft="@dimen/transition_btn_margin_left_right"
             android:layout_marginRight="@dimen/transition_btn_margin_left_right"
-            android:layout_marginTop="@dimen/margin_8dp"
             android:gravity="center"
             android:textSize="@dimen/transition_btn_text_size"
             android:background="@drawable/btn_bg"
@@ -52,4 +66,18 @@
 
     </LinearLayout>
 
-</FrameLayout>
+    <FrameLayout
+        android:id="@+id/scene_container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_8dp"
+        android:layout_marginRight="@dimen/margin_8dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
+        android:padding="@dimen/margin_8dp"
+        android:background="@drawable/listview_title_bg"
+        android:orientation="vertical">
+        <include layout="@layout/transition_scene_first"/>
+
+    </FrameLayout>
+
+</LinearLayout>
