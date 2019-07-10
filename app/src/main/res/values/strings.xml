@@ -27,4 +27,13 @@
     <string name="scene_from_station">新宿</string>
     <string name="scene_to_station">町田</string>
 
+    <string name="circular_reveal_wifi">Wifi</string>
+    <string name="circular_reveal_bluetooth">Bluetooth</string>
+    <string name="circular_reveal_screen_ratation">自動回転</string>
+
+
+    <string name="circular_reveal_flight_mode">機内モード</string>
+    <string name="circular_reveal_location">位置情報</string>
+    <string name="circular_reveal_screen_corp">スクリーンショット</string>
+
 </resources>

@@ -4,6 +4,8 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Explode;
@@ -15,6 +17,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.jgo.demos.R;
@@ -24,7 +27,7 @@ import com.jgo.demos.R;
  *
  */
 
-public class TransitionActivity extends AppCompatActivity implements View.OnClickListener {
+public class TransitionActivity extends AppCompatActivity implements View.OnClickListener, CircularRevealFragment.CircularItemListener {
 
     public static final int TRANS_EXPLODE = 1;
     public static final int TRANS_SLIDE   = 2;
@@ -37,6 +40,9 @@ public class TransitionActivity extends AppCompatActivity implements View.OnClic
     private Scene mSceneFirst;
     private Scene mSceneSecond;
     private boolean mIsFirstScene;
+
+    private FrameLayout mCircularLayout;
+    private CircularRevealFragment mCircularRevealFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,6 +61,21 @@ public class TransitionActivity extends AppCompatActivity implements View.OnClic
 
         findViewById(R.id.scene_revert_img).setOnClickListener(this);
         mIsFirstScene = true;
+
+        mCircularRevealFragment = new CircularRevealFragment();
+        mCircularRevealFragment.setItemListener(this);
+        mCircularLayout = findViewById(R.id.circular_reveal_layout);
+        replaceCircularFragment(mCircularRevealFragment);
+    }
+
+    /**
+     *
+     */
+    private void replaceCircularFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.circular_reveal_layout, fragment, "");
+        transaction.addToBackStack("");
+        transaction.commit();
     }
 
     @Override
@@ -92,5 +113,15 @@ public class TransitionActivity extends AppCompatActivity implements View.OnClic
         }
 
         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+    }
+
+    @Override
+    public void onSelected(int circularType) {
+        switch (circularType) {
+            case CircularRevealFragment.CIRCULAR_TYPE_WIFI :
+                CircularRevealWifiFragment wifiFragment = new CircularRevealWifiFragment();
+                replaceCircularFragment(wifiFragment);
+                break;
+        }
     }
 }
