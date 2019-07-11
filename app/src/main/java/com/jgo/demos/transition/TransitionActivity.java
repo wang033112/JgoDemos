@@ -116,10 +116,10 @@ public class TransitionActivity extends AppCompatActivity implements View.OnClic
     }
 
     @Override
-    public void onSelected(int circularType) {
+    public void onSelected(int circularType, float x, float y) {
         switch (circularType) {
             case CircularRevealFragment.CIRCULAR_TYPE_WIFI :
-                CircularRevealWifiFragment wifiFragment = new CircularRevealWifiFragment();
+                CircularRevealWifiFragment wifiFragment = CircularRevealWifiFragment.getInstance(x, y);
                 replaceCircularFragment(wifiFragment);
                 break;
         }

@@ -43,10 +43,13 @@ public class CircularRevealFragment extends Fragment implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+        float x = v.getX() + v.getWidth() / 2;
+        float y = v.getY() + v.getHeight() / 2;
+
         switch (v.getId()) {
             case R.id.circular_reveal_wifi_layout:
                 if (mItemListener != null) {
-                    mItemListener.onSelected(CIRCULAR_TYPE_WIFI);
+                    mItemListener.onSelected(CIRCULAR_TYPE_WIFI, x, y);
                 }
                 break;
         }
@@ -57,6 +60,6 @@ public class CircularRevealFragment extends Fragment implements View.OnClickList
     }
 
     public interface CircularItemListener {
-        void onSelected(int circularType);
+        void onSelected(int circularType, float x, float y);
     }
 }

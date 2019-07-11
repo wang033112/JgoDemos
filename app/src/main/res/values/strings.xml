@@ -30,10 +30,11 @@
     <string name="circular_reveal_wifi">Wifi</string>
     <string name="circular_reveal_bluetooth">Bluetooth</string>
     <string name="circular_reveal_screen_ratation">自動回転</string>
-
-
     <string name="circular_reveal_flight_mode">機内モード</string>
     <string name="circular_reveal_location">位置情報</string>
     <string name="circular_reveal_screen_corp">スクリーンショット</string>
+    <string name="circular_reveal_wifi_sample_1">SPWN_5218n</string>
+    <string name="circular_reveal_wifi_sample_2">Buffalo_A_450E</string>
+    <string name="circular_reveal_wifi_sample_3">Buffalo_D_450E</string>
 
 </resources>

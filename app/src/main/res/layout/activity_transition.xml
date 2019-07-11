@@ -86,9 +86,10 @@
     <FrameLayout
         android:id="@+id/circular_reveal_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_8dp"
-        android:padding="@dimen/margin_8dp"
+        android:layout_height="@dimen/transition_circular_container_height"
+        android:layout_marginLeft="@dimen/margin_8dp"
+        android:layout_marginRight="@dimen/margin_8dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
         android:background="@drawable/listview_title_bg">
 
     </FrameLayout>

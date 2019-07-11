@@ -39,5 +39,6 @@
     <dimen name="transition_scene_text_size">16sp</dimen>
 
     <dimen name="transition_circular_icon_size">30dp</dimen>
+    <dimen name="transition_circular_container_height">170dp</dimen>
 
 </resources>

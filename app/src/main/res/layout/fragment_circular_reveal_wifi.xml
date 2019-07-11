@@ -4,25 +4,35 @@
     android:id="@+id/circular_reveal_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/circular_reveal_bg"
     android:layout_margin="@dimen/margin_8dp"
-    android:padding="@dimen/margin_8dp"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/close_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            android:src="@drawable/close" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/margin_8dp"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal">
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/circular_reveal_wifi_layout"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:layout_gravity="start|center_vertical"
+            android:gravity="center"
+            android:orientation="horizontal">
             <ImageView
                 android:layout_width="@dimen/transition_circular_icon_size"
                 android:layout_height="@dimen/transition_circular_icon_size"
@@ -30,10 +40,49 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_5dp"
+                android:layout_marginLeft="@dimen/margin_8dp"
                 android:gravity="center"
                 android:textColor="@color/dodgerblue"
-                android:text="@string/circular_reveal_wifi"/>
+                android:text="@string/circular_reveal_wifi_sample_1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="@dimen/transition_circular_icon_size"
+                android:layout_height="@dimen/transition_circular_icon_size"
+                android:src="@drawable/network_wifi_40dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8dp"
+                android:gravity="center"
+                android:textColor="@color/dodgerblue"
+                android:text="@string/circular_reveal_wifi_sample_2"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="@dimen/transition_circular_icon_size"
+                android:layout_height="@dimen/transition_circular_icon_size"
+                android:src="@drawable/network_wifi_40dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8dp"
+                android:gravity="center"
+                android:textColor="@color/dodgerblue"
+                android:text="@string/circular_reveal_wifi_sample_3"/>
         </LinearLayout>
 
     </LinearLayout>
