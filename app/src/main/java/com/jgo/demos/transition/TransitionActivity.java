@@ -14,6 +14,7 @@ import android.transition.Scene;
 import android.transition.Slide;
 import android.transition.TransitionManager;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -65,16 +66,16 @@ public class TransitionActivity extends AppCompatActivity implements View.OnClic
         mCircularRevealFragment = new CircularRevealFragment();
         mCircularRevealFragment.setItemListener(this);
         mCircularLayout = findViewById(R.id.circular_reveal_layout);
-        replaceCircularFragment(mCircularRevealFragment);
+        replaceCircularFragment(mCircularRevealFragment, false);
     }
 
     /**
      *
      */
-    private void replaceCircularFragment(Fragment fragment) {
+    private void replaceCircularFragment(Fragment fragment, boolean isAddToBackStack) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.circular_reveal_layout, fragment, "");
-        transaction.addToBackStack("");
+        if (isAddToBackStack) transaction.addToBackStack("");
         transaction.commit();
     }
 
@@ -120,8 +121,18 @@ public class TransitionActivity extends AppCompatActivity implements View.OnClic
         switch (circularType) {
             case CircularRevealFragment.CIRCULAR_TYPE_WIFI :
                 CircularRevealWifiFragment wifiFragment = CircularRevealWifiFragment.getInstance(x, y);
-                replaceCircularFragment(wifiFragment);
+                replaceCircularFragment(wifiFragment, true);
                 break;
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        this.finish();
     }
 }
