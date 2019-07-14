@@ -13,6 +13,7 @@
     <string name="person_list_content_more">More</string>
 
 
+    <string name="img_des">Image_description_default</string>
     <!-- transition -->
     <string name="transition_explode">Explode</string>
     <string name="transition_slide">Slide</string>

@@ -101,6 +101,10 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
             case "Activity_transition" :
                 intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.transition.TransitionActivity"));
                 break;
+
+            case "ShareElementActivity" :
+                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.transition.ShareElementActivity"));
+                break;
         }
 
         startActivity(intent);

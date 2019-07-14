@@ -43,6 +43,11 @@
             android:name="com.jgo.demos.transition.TransitionDesActivity"
             android:launchMode="standard">
         </activity>
+
+        <activity
+            android:name="com.jgo.demos.transition.ShareElementActivity"
+            android:launchMode="standard">
+        </activity>
     </application>
 
 </manifest>

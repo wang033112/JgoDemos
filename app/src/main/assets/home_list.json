@@ -20,10 +20,7 @@
         "name": "Activity_transition"
       },
       {
-        "name": "TextView_2"
-      },
-      {
-        "name": "TextView_3"
+        "name": "ShareElementActivity"
       }
     ]
   },

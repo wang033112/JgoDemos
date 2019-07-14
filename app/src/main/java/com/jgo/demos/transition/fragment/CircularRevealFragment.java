@@ -1,4 +1,4 @@
-package com.jgo.demos.transition;
+package com.jgo.demos.transition.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

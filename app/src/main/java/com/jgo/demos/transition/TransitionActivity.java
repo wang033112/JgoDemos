@@ -22,6 +22,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.jgo.demos.R;
+import com.jgo.demos.transition.fragment.CircularRevealFragment;
+import com.jgo.demos.transition.fragment.CircularRevealWifiFragment;
 
 /**
  * Created by ke-oh on 2019/07/08.
