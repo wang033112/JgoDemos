@@ -35,6 +35,11 @@
         </activity>
 
         <activity
+            android:name="com.jgo.demos.listview.CouponListActivity"
+            android:launchMode="standard">
+        </activity>
+
+        <activity
             android:name="com.jgo.demos.transition.TransitionActivity"
             android:launchMode="standard">
         </activity>
@@ -48,6 +53,8 @@
             android:name="com.jgo.demos.transition.ShareElementActivity"
             android:launchMode="standard">
         </activity>
+
+
     </application>
 
 </manifest>
