@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.jgo.demos.R;
 import com.jgo.demos.listview.adapter.CouponRecyclerViewAdapter;
+import com.jgo.demos.listview.data.CouponData;
 import com.jgo.demos.listview.data.ImageData;
 
 import java.util.ArrayList;
@@ -41,14 +42,14 @@ public class CouponListActivity extends AppCompatActivity {
      *
      * @return ダミーデータ
      */
-    private List<ImageData> buildImageData() {
-        List<ImageData> imageData = new ArrayList<>();
-        imageData.add(new ImageData("Image_Bench", images[0]));
-        imageData.add(new ImageData("Image_Moutain", images[1]));
-        imageData.add(new ImageData("Image_Sun", images[2]));
-        imageData.add(new ImageData("Image_Tree", images[3]));
-        imageData.add(new ImageData("Image_Wind", images[4]));
+    private List<CouponData> buildImageData() {
+        List<CouponData> couponData = new ArrayList<>();
+        couponData.add(new CouponData(String.valueOf(101), "A"));
+        couponData.add(new CouponData(String.valueOf(102), "B"));
+        couponData.add(new CouponData(String.valueOf(103), "C"));
+        couponData.add(new CouponData(String.valueOf(104), "D"));
+        couponData.add(new CouponData(String.valueOf(105), "E"));
 
-        return imageData;
+        return couponData;
     }
 }

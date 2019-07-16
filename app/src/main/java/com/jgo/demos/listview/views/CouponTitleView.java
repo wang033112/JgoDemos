@@ -14,7 +14,7 @@ import android.widget.RelativeLayout;
 
 public class CouponTitleView extends RelativeLayout {
 
-    private static final int CIRCLE_COUNT = 20;
+    private static final int CIRCLE_COUNT = 25;
     private Context mContext;
     private Paint mPaint;
 

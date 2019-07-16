@@ -9,7 +9,7 @@
     app:cardElevation="2dp">
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     android:gravity="center_vertical"
     android:orientation="vertical">
@@ -25,10 +25,10 @@
             android:layout_marginLeft="30dp"
             app:cardCornerRadius="25dp">
             <TextView
+                android:id="@+id/coupon_brand_name_omit_tv"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:text="A"
                 android:textSize="25dp"
                 android:background="@color/white"
                 android:textColor="@color/dodgerblue"/>
@@ -59,16 +59,17 @@
     </com.jgo.demos.listview.views.CouponTitleView>
     <com.jgo.demos.listview.views.CouponDetailView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/listview_coupon_detail_bg">
 
         <LinearLayout
+            android:id="@+id/coupon_detail_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_marginTop="30dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
-            android:layout_centerVertical="true"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -84,7 +85,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_8dp"
                     android:gravity="center_vertical|start"
-                    android:textColor="@color/light_gray"
                     android:text="2019-06-19 〜 2019-12-31"/>
             </LinearLayout>
 
@@ -103,12 +103,30 @@
                     android:layout_marginStart="@dimen/margin_8dp"
                     android:maxLines="2"
                     android:gravity="center_vertical|start"
-                    android:textColor="@color/light_gray"
                     android:text="Jetpack is a suite of libraries, tools, and guidance to help developers write high- quality apps easier"/>
             </LinearLayout>
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/coupon_expand_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/coupon_detail_layout"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/expand_more"/>
         <TextView
+            android:id="@+id/coupon_detail_info_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            android:layout_marginBottom="@dimen/margin_8dp"
+            android:layout_below="@+id/coupon_expand_img"
+            android:background="@color/white"
+            android:text="「Android Jetpack Navigation は使いやすく設計されており、自由に設定できます。カスタムビューを使って、以前のナビゲーション ドロワーをリファクタリングし、アンチパターンをすべて取り除くことができました。アプリ全体でさらに幅広く、このナビゲーションを採用する予定です。」"
+            android:visibility="gone"/>
+
+        <!--<TextView
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignParentEnd="true"
@@ -118,7 +136,7 @@
             android:text="3"
             android:textColor="@color/white"
             android:background="@drawable/listview_coupon_cnt"
-            android:visibility="gone"/>
+            android:visibility="gone"/>-->
         
     </com.jgo.demos.listview.views.CouponDetailView>
 

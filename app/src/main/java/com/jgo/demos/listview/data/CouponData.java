@@ -17,9 +17,11 @@ public class CouponData {
     private String description;
     private int cnt;
     private String content;
+    private boolean isExpand;
 
-    public CouponData(String id) {
+    public CouponData(String id, String brandNameOmit) {
         this.id = id;
+        this.brandNameOmit = brandNameOmit;
     }
 
     public String getBrandNameOmit() {
@@ -76,5 +78,13 @@ public class CouponData {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public boolean isExpand() {
+        return isExpand;
+    }
+
+    public void setExpand(boolean expand) {
+        isExpand = expand;
     }
 }
