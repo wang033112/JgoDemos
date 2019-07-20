@@ -102,6 +102,10 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
                 intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.CouponListActivity"));
                 break;
 
+            case "OverlayList" :
+                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.OverlayListActivity"));
+                break;
+
             case "Activity_transition" :
                 intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.transition.TransitionActivity"));
                 break;

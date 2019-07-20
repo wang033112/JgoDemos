@@ -13,6 +13,9 @@
       },
       {
         "name": "CouponList"
+      },
+      {
+        "name": "OverlayList"
       }
     ]
   },
