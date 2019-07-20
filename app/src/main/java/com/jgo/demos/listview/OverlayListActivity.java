@@ -56,7 +56,10 @@ public class OverlayListActivity extends AppCompatActivity {
             overlayData.add(new OverlayData("Image_Wind_" + i, images[4]));*/
         //}
 
-            overlayData.add(new OverlayData("Image_Bench_", images[0]));
+            for (int i = 0; i < 14; i++) {
+               overlayData.add(new OverlayData("Index_" + i, images[i]));
+            }
+            /*overlayData.add(new OverlayData("Image_Bench_", images[0]));
             overlayData.add(new OverlayData("Image_Moutain_", images[1]));
             overlayData.add(new OverlayData("Image_Sun_", images[2]));
             overlayData.add(new OverlayData("Image_Tree_", images[3]));
@@ -71,7 +74,7 @@ public class OverlayListActivity extends AppCompatActivity {
             overlayData.add(new OverlayData("Image_Bench_1", images[10]));
             overlayData.add(new OverlayData("Image_Moutain_1", images[11]));
             overlayData.add(new OverlayData("Image_Sun_1", images[12]));
-            overlayData.add(new OverlayData("Image_Sun_1", images[13]));
+            overlayData.add(new OverlayData("Image_Sun_1", images[13]));*/
 
         return overlayData;
     }

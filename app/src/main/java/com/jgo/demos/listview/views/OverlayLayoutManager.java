@@ -2,7 +2,6 @@ package com.jgo.demos.listview.views;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -12,9 +11,6 @@ import android.view.ViewGroup;
  */
 
 public class OverlayLayoutManager extends RecyclerView.LayoutManager {
-
-    private static final String TAG = "OverFlyingLayoutManager";
-
     private static final float OVERLAY_FACTOR = 0.2f;
     private static final float DIVIDE_FACTOR = 10;
 
@@ -31,14 +27,12 @@ public class OverlayLayoutManager extends RecyclerView.LayoutManager {
 
     @Override
     public RecyclerView.LayoutParams generateDefaultLayoutParams() {
-        return new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT);
+        return new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
     }
 
     @Override
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State recyclerViewState) {
         super.onLayoutChildren(recycler, recyclerViewState);
-
         if (getItemCount() == 0 || (getChildCount() == 0 && recyclerViewState.isPreLayout())) {
             return;
         }
@@ -63,11 +57,6 @@ public class OverlayLayoutManager extends RecyclerView.LayoutManager {
         mItemViewHeight = getDecoratedMeasuredHeight(view);
         mOverlayOffSet = 4 * mItemViewHeight;
         mTotalHeight = getItemCount() * mItemViewHeight;
-    }
-
-    @Override
-    public boolean canScrollVertically() {
-        return true;
     }
 
     @Override
@@ -143,10 +132,20 @@ public class OverlayLayoutManager extends RecyclerView.LayoutManager {
                 //Set alpha
                 view.setAlpha(1 - scaleRate);
 
-                Log.d(TAG, "layout View Left : " + (width - realWidth) / 2 + ", Top : " + (realBottomOffset - height) + ", Right : " + realWidth + ", Bottom : " + realBottomOffset);
-                layoutDecoratedWithMargins(view, (width - realWidth) / 2, realBottomOffset - height, (width - realWidth) / 2 + realWidth, realBottomOffset);
+                int leftMargin = ((RecyclerView.LayoutParams)view.getLayoutParams()).leftMargin;
+                layoutDecoratedWithMargins(view, (width - realWidth) / 2 + leftMargin, realBottomOffset - height, leftMargin + (width - realWidth) / 2 + realWidth, realBottomOffset);
             }
         }
+    }
+
+    /**
+     * can scroll vertically
+     *
+     * @return true if vertically
+     */
+    @Override
+    public boolean canScrollVertically() {
+        return true;
     }
 
     /**

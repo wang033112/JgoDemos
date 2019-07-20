@@ -1,5 +1,6 @@
 package com.jgo.demos.listview.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.jgo.demos.R;
@@ -21,11 +23,11 @@ import java.util.List;
  */
 public class OverlayRecyclerViewAdapter extends RecyclerView.Adapter<OverlayRecyclerViewAdapter.RecyclerHolder> {
     private Context mContext;
-    private List<OverlayData> mImageDatas = new ArrayList<>();
+    private List<OverlayData> mOverlayData = new ArrayList<>();
 
-    public OverlayRecyclerViewAdapter(Context context, List<OverlayData> imageDatas) {
+    public OverlayRecyclerViewAdapter(Context context, List<OverlayData> mOverlayData) {
         this.mContext = context;
-        this.mImageDatas = imageDatas;
+        this.mOverlayData = mOverlayData;
     }
 
     /**
@@ -35,8 +37,8 @@ public class OverlayRecyclerViewAdapter extends RecyclerView.Adapter<OverlayRecy
      */
     public void setData(List<OverlayData> dataList) {
         if (null != dataList) {
-            mImageDatas.clear();
-            mImageDatas.addAll(dataList);
+            mOverlayData.clear();
+            mOverlayData.addAll(dataList);
             notifyDataSetChanged();
         }
     }
@@ -47,23 +49,26 @@ public class OverlayRecyclerViewAdapter extends RecyclerView.Adapter<OverlayRecy
         return new RecyclerHolder(view);
     }
 
+    @SuppressLint("StringFormatMatches")
     @Override
     public void onBindViewHolder(RecyclerHolder holder, int position) {
-        //holder.imageView.setText(dataList.get(position));
-        Glide.with(mContext).load(ContextCompat.getDrawable(mContext, mImageDatas.get(position).getMipmapId())).into(holder.imageView);
+        holder.titleTv.setText(String.format(mContext.getString(R.string.overlay_list_sample_text, mOverlayData.get(position).getTitle())));
+        Glide.with(mContext).load(ContextCompat.getDrawable(mContext, mOverlayData.get(position).getMipmapId())).into(holder.imageView);
     }
 
     @Override
     public int getItemCount() {
-        return mImageDatas.size();
+        return mOverlayData.size();
     }
 
     class RecyclerHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
+        TextView titleTv;
 
         private RecyclerHolder(View itemView) {
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.overlay_view_img);
+            titleTv = (TextView) itemView.findViewById(R.id.overlay_title_tv);
         }
     }
 }
