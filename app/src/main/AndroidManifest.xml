@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
 
+        <!-- listview -->
         <activity
             android:name="com.jgo.demos.listview.ImageListViewActivity"
             android:launchMode="standard">
@@ -44,6 +45,7 @@
             android:launchMode="standard">
         </activity>
 
+        <!-- transition -->
         <activity
             android:name="com.jgo.demos.transition.TransitionActivity"
             android:launchMode="standard">
@@ -56,6 +58,12 @@
 
         <activity
             android:name="com.jgo.demos.transition.ShareElementActivity"
+            android:launchMode="standard">
+        </activity>
+
+        <!-- custom view -->
+        <activity
+            android:name="com.jgo.demos.customview.DotLineActivity"
             android:launchMode="standard">
         </activity>
 

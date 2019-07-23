@@ -113,6 +113,10 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
             case "ShareElementActivity" :
                 intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.transition.ShareElementActivity"));
                 break;
+
+            case "DotlineView" :
+                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.customview.DotLineActivity"));
+                break;
         }
 
         startActivity(intent);

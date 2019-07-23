@@ -31,58 +31,10 @@
     ]
   },
   {
-    "title": "ViewGroup",
+    "title": "CustomViews",
     "samples": [
       {
-        "name": "TextView_1!"
-      },
-      {
-        "name": "TextView_2"
-      },
-      {
-        "name": "TextView_3"
-      }
-    ]
-  },
-  {
-    "title": "Dialog",
-    "samples": [
-      {
-        "name": "Dialog_1"
-      },
-      {
-        "name": "Dialog_2"
-      },
-      {
-        "name": "Dialog_3"
-      }
-    ]
-  },
-  {
-    "title": "Video",
-    "samples": [
-      {
-        "name": "TextView_1!"
-      },
-      {
-        "name": "TextView_2"
-      },
-      {
-        "name": "TextView_3"
-      }
-    ]
-  },
-  {
-    "title": "GoodsDetail",
-    "samples": [
-      {
-        "name": "GoodsDetail_1"
-      },
-      {
-        "name": "GoodsDetail_2"
-      },
-      {
-        "name": "GoodsDetail_3"
+        "name": "DotlineView"
       }
     ]
   }
