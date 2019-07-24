@@ -1,42 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/margin_8dp"
-    tools:context="com.jgo.demos.customview.DotLineActivity">
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/color_background"
+        tools:context="com.jgo.demos.transition.TransitionActivity">
 
-    <com.jgo.demos.customview.views.DotLineLayout
-        android:layout_width="150dp"
-        android:layout_height="230dp"
-        android:layout_gravity="center">
-        <TextView
-            android:id="@+id/first"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="DotLineLayout">
-        </TextView>
-    </com.jgo.demos.customview.views.DotLineLayout>
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_8dp"
+            android:padding="@dimen/margin_8dp"
+            android:background="@drawable/listview_title_bg"
+            android:orientation="horizontal">
 
-    <com.jgo.demos.customview.views.DotLineLayout
-        android:layout_width="150dp"
-        android:layout_height="230dp"
-        android:layout_gravity="center">
-        <TextView
-            android:id="@+id/second"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="DotLineLayout">
-        </TextView>
-    </com.jgo.demos.customview.views.DotLineLayout>
+            <com.jgo.demos.customview.views.DotLineLayout
+                android:layout_width="0dp"
+                android:layout_height="230dp"
+                android:layout_weight="1"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/first"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="DotLineLayout">
+                </TextView>
+            </com.jgo.demos.customview.views.DotLineLayout>
 
+            <com.jgo.demos.customview.views.DotLineLayout
+                android:layout_width="0dp"
+                android:layout_height="230dp"
+                android:layout_weight="1"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/second"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="DotLineLayout">
+                </TextView>
+            </com.jgo.demos.customview.views.DotLineLayout>
 
-</LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
