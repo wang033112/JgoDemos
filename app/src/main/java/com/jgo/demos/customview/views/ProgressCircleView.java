@@ -89,7 +89,7 @@ public class ProgressCircleView extends FrameLayout {
                 bottom - MARGIN_OUTER_CIRCLE - GAP_OUTER_INNER / 2
         );
 
-        mInnerBitmap = Bitmap.createBitmap(mOutCircleRadius * 3 / 4, mOutCircleRadius * 3 / 4 ,Bitmap.Config.ARGB_8888);
+        mInnerBitmap = Bitmap.createBitmap(mOutCircleRadius, mOutCircleRadius, Bitmap.Config.ARGB_8888);
         mInnerCanvas = new Canvas(mInnerBitmap);
     }
 

@@ -28,7 +28,8 @@ public class DotLineLayout extends FrameLayout {
 
     private static final String TAG = DotLineLayout.class.getSimpleName();
 
-    private static final int RADIUS = Utils.px2dip(160);
+    private static final int PAINT_WIDTH = Utils.px2dip(10);
+    private static final int RADIUS = Utils.px2dip(160) - PAINT_WIDTH;
     private Context mContext;
     private Paint mDotLinePaint;
     private Paint mLinePaint;
@@ -72,13 +73,13 @@ public class DotLineLayout extends FrameLayout {
     private void init() {
         mDotLinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mDotLinePaint.setColor(ContextCompat.getColor(mContext, R.color.dodgerblue));
-        mDotLinePaint.setStrokeWidth(3);
+        mDotLinePaint.setStrokeWidth(PAINT_WIDTH);
         mDotLinePaint.setStyle(Paint.Style.STROKE);
         mDotLinePaint.setPathEffect(new DashPathEffect(new float[] {16, 8}, 0));
 
         mLinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mLinePaint.setColor(ContextCompat.getColor(mContext, R.color.dodgerblue));
-        mLinePaint.setStrokeWidth(3);
+        mLinePaint.setStrokeWidth(PAINT_WIDTH);
         mLinePaint.setStyle(Paint.Style.STROKE);
 
         mLeftBorderPath = new Path();
@@ -86,7 +87,7 @@ public class DotLineLayout extends FrameLayout {
         mTopBorderPath = new Path();
         mBottomBorderPath = new Path();
 
-        mCircleRecF = new RectF(0, 0, 2 * RADIUS, 2 * RADIUS);
+        mCircleRecF = new RectF(PAINT_WIDTH, PAINT_WIDTH, 2 * RADIUS, 2 * RADIUS);
 
         setPadding(RADIUS, RADIUS, RADIUS, RADIUS);
 
@@ -124,7 +125,7 @@ public class DotLineLayout extends FrameLayout {
         path.lineTo(RADIUS, RADIUS * 2);//top - left - end
 
         canvas.drawPath(path, mDotLinePaint);
-        canvas.drawCircle(RADIUS, RADIUS, RADIUS, mDotLinePaint);
+        canvas.drawCircle(RADIUS + PAINT_WIDTH, RADIUS + PAINT_WIDTH, RADIUS, mDotLinePaint);
     }
 
     /**
