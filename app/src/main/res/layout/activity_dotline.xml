@@ -65,11 +65,22 @@
             android:background="@drawable/listview_title_bg"
             android:orientation="horizontal">
             <com.jgo.demos.customview.views.ProgressCircleView
+                android:id="@+id/progress_circle"
                 android:layout_width="200dp"
-                android:layout_height="280dp"
+                android:layout_height="250dp"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="18dp"/>
+            <Button
+                android:id="@+id/start_progress"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/btn_bg"
+                android:layout_below="@+id/progress_circle"
+                android:textColor="@color/dodgerblue"
+                android:text="@string/start_progress"/>
         </RelativeLayout>
 
     </LinearLayout>

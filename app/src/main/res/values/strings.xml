@@ -38,7 +38,10 @@
     <string name="circular_reveal_wifi_sample_2">Buffalo_A_450E</string>
     <string name="circular_reveal_wifi_sample_3">Buffalo_D_450E</string>
 
-    <!-- transition -->
+
     <string name="overlay_list_sample_text">Overlay list sample %s</string>
+
+    <!-- custome_view -->
+    <string name="start_progress">Start</string>
 
 </resources>
