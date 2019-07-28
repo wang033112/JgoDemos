@@ -8,13 +8,11 @@ import android.graphics.Canvas;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PorterDuff;
 import android.graphics.RectF;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 
@@ -105,13 +103,12 @@ public class DotLineLayout extends FrameLayout {
     @Override
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        
+
         if (mIsSelected) {
             drawLineBorder(canvas);
         } else {
             drawDashLineBorder(canvas);
         }
-
     }
 
     /**

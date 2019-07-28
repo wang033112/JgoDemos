@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <declare-styleable name="WaterProgressView">
+        <attr name="circle_color" format="color"/>
+        <attr name="progress_color" format="color"/>
+        <attr name="text_color" format="color"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="ripple_topheight" format="dimension"/>
+    </declare-styleable>
+
 </resources>
