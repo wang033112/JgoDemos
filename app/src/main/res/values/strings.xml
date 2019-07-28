@@ -43,5 +43,6 @@
 
     <!-- custome_view -->
     <string name="start_progress">Start</string>
+    <string name="click_hint">Click Here.</string>
 
 </resources>

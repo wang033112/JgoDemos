@@ -33,7 +33,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="DotLineLayout">
+                    android:text="@string/click_hint">
                 </TextView>
             </com.jgo.demos.customview.views.DotLineLayout>
 
@@ -49,7 +49,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="DotLineLayout">
+                    android:text="@string/click_hint">
                 </TextView>
             </com.jgo.demos.customview.views.DotLineLayout>
 

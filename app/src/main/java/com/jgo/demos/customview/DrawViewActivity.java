@@ -15,7 +15,7 @@ import com.jgo.demos.customview.views.ProgressCircleView;
  *
  */
 
-public class DotLineActivity extends AppCompatActivity implements View.OnClickListener {
+public class DrawViewActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ProgressCircleView mProgressView;
 
