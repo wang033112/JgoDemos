@@ -47,7 +47,7 @@ public class DrawViewActivity extends AppCompatActivity implements View.OnClickL
         });
 
         animator.setInterpolator(new AccelerateInterpolator());
-        animator.setDuration(15 * 1000);
+        animator.setDuration(5 * 1000);
         animator.start();
     }
 }
