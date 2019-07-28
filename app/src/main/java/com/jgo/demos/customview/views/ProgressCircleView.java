@@ -116,12 +116,12 @@ public class ProgressCircleView extends FrameLayout {
         mInnerBitmap = Bitmap.createBitmap(mOutCircleRadius, mOutCircleRadius, Bitmap.Config.ARGB_8888);
         mInnerCanvas = new Canvas(mInnerBitmap);
 
-        mHookStartX = mInnerBitmap.getWidth() / 4;
-        mHookStartY = mInnerBitmap.getHeight() * 3 / 8;
-        mHookMiddleX = mInnerBitmap.getWidth() * 3 / 8 + 40;
+        mHookStartX = mInnerBitmap.getWidth() / 4 - 10;
+        mHookStartY = mInnerBitmap.getHeight() * 3 / 8 + 10;
+        mHookMiddleX = mInnerBitmap.getWidth() * 3 / 8 + 10;
         mHookMiddleY = mInnerBitmap.getHeight() * 5 / 8;
-        mHookEndX = mInnerBitmap.getWidth() * 3 / 4;
-        mHookEndY = mInnerBitmap.getHeight() / 4;
+        mHookEndX = mInnerBitmap.getWidth() * 3 / 4 + 20;
+        mHookEndY = mInnerBitmap.getHeight() / 4 + 10;
 
         mHandler = new Handler();
     }
