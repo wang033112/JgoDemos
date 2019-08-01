@@ -83,5 +83,115 @@
                 android:text="@string/start_progress"/>
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginLeft="@dimen/margin_8dp"
+            android:layout_marginRight="@dimen/margin_8dp"
+            android:padding="@dimen/margin_8dp"
+            android:background="@drawable/listview_title_bg"
+            android:orientation="horizontal">
+            <com.jgo.demos.customview.views.DashBoardView
+                android:id="@+id/dash_bord"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="18dp"/>
+            <Button
+                android:id="@+id/round_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/btn_bg"
+                android:layout_below="@+id/dash_bord"
+                android:textColor="@color/dodgerblue"
+                android:text="@string/start_progress"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginLeft="@dimen/margin_8dp"
+            android:layout_marginRight="@dimen/margin_8dp"
+            android:padding="@dimen/margin_8dp"
+            android:background="@drawable/listview_title_bg"
+            android:orientation="horizontal">
+            <com.jgo.demos.customview.views.BezierRouteView
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/bezier_target_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:layout_marginEnd="@dimen/margin_8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/shopping_cart_24dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/margin_8dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/besier_route_a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/circle_bg"
+                            android:textSize="30sp"
+                            android:gravity="center"
+                            android:textColor="@color/dodgerblue"
+                            android:text="A"/>
+                        <TextView
+                            android:id="@+id/besier_route_b"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/circle_bg"
+                            android:textSize="30sp"
+                            android:gravity="center"
+                            android:textColor="@color/dodgerblue"
+                            android:text="B"/>
+                        <TextView
+                            android:id="@+id/besier_route_c"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/circle_bg"
+                            android:textSize="30sp"
+                            android:gravity="center"
+                            android:textColor="@color/dodgerblue"
+                            android:text="C"/>
+                        <TextView
+                            android:id="@+id/besier_route_d"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/circle_bg"
+                            android:textSize="30sp"
+                            android:gravity="center"
+                            android:textColor="@color/dodgerblue"
+                            android:text="D"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </com.jgo.demos.customview.views.BezierRouteView>
+
+        </RelativeLayout>
+
     </LinearLayout>
 </ScrollView>

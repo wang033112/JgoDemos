@@ -129,7 +129,7 @@ public class ProgressCircleView extends FrameLayout {
     private void init() {
         mPrimaryColorPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPrimaryColorPaint.setColor(ContextCompat.getColor(mContext, R.color.dodgerblue));
-        mPrimaryColorPaint.setStrokeWidth(3);
+        mPrimaryColorPaint.setStrokeWidth(PAINT_STROKE_WIDTH);
         mPrimaryColorPaint.setStyle(Paint.Style.STROKE);
 
         mGapPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -211,7 +211,7 @@ public class ProgressCircleView extends FrameLayout {
         });
 
         animator.setInterpolator(new AccelerateInterpolator());
-        animator.setDuration(300);
+        animator.setDuration(200);
         animator.start();
     }
 
