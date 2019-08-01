@@ -13,6 +13,9 @@
     <color name="transparent">#00000000</color>
     <color name="dodgerblue">#20B2AA</color>
 
+    <color name="gray_line">#eeeeee</color>
+    <color name="ring_start_color">#00FFFF</color>
+    <color name="ring_end_color">#006600</color>
 
 
 </resources>

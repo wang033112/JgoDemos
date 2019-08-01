@@ -27,6 +27,7 @@ public class DashBoardView extends View {
 
     private static final String TAG = DashBoardView.class.getSimpleName();
     private static final int MARGIN_HEIGHT = 50;
+    private static final int TEXT_SIZE = 60;
     private Context mContext;
 
     private Paint paint , tmpPaint , textPaint ,  strokePain;
@@ -62,6 +63,7 @@ public class DashBoardView extends View {
      */
     private void init() {
         paint = new Paint();
+        paint.setAntiAlias(true);
         rect = new RectF();
         textPaint = new Paint();
         tmpPaint = new Paint();
@@ -82,10 +84,9 @@ public class DashBoardView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-
         setLayerType(LAYER_TYPE_SOFTWARE, null);
-        //颜色指示的环
-        initRing(canvas);
+
+        drawRing(canvas);
         //刻度文字
         initScale(canvas);
         //指针
@@ -104,13 +105,13 @@ public class DashBoardView extends View {
         float rIndex = mLength ;
 
         //设置文字展示的圆环
-        paint.setColor(Color.parseColor("#eeeeee"));
-        paint.setShader(null);
-        paint.setShadowLayer(5, 0, 0, 0x54000000);
-        rect = new RectF( - (rIndex/ 3 ), - (rIndex / 3), rIndex / 3, rIndex / 3);
+        paint.setColor(ContextCompat.getColor(mContext, R.color.gray_line));
+        /*paint.setShader(null);
+        paint.setShadowLayer(5, 0, 0, 0x54000000);*/
+        rect = new RectF( -(rIndex / 3 ), - (rIndex / 3), rIndex / 3, rIndex / 3);
         canvas.drawArc(rect, 0, 360, true, paint);
 
-        paint.clearShadowLayer();
+        //paint.clearShadowLayer();
 
         canvas.restore();
         canvas.save();
@@ -120,8 +121,8 @@ public class DashBoardView extends View {
         textPaint.setStrokeWidth(1);
         textPaint.setAntiAlias(true);
 
-        textPaint.setTextSize(60);
-        textPaint.setColor(Color.parseColor("#fc6555"));
+        textPaint.setTextSize(TEXT_SIZE);
+        textPaint.setColor(ContextCompat.getColor(mContext, R.color.colorPrimary));
         textPaint.setTextAlign(Paint.Align.RIGHT);
 
         int _per = (int) (per * 120);
@@ -135,25 +136,23 @@ public class DashBoardView extends View {
         }
 
         float swidth = textPaint.measureText(String.valueOf(_per));
-        //计算偏移量 是的数字和百分号整体居中显示
         swidth =   (swidth - (swidth + 22) / 2);
 
 
         canvas.translate( swidth , 0);
         canvas.drawText("" + _per, 0, 0, textPaint);
 
-        textPaint.setTextSize(30);
+        /*textPaint.setTextSize(30);
         textPaint.setTextAlign(Paint.Align.LEFT);
 
         canvas.drawText("%" , 0, 0, textPaint);
         textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setColor(Color.parseColor("#999999"));
+        textPaint.setColor(Color.parseColor("#999999"));*/
 
-
-        canvas.restore();
+        /*canvas.restore();
         canvas.save();
         canvas.translate(canvas.getWidth()/2  , mWidth / 2 + mLength / 3 /2 );
-        canvas.drawText("完成率" , 0, 0, textPaint);
+        canvas.drawText("完成率" , 0, 0, textPaint);*/
     }
 
     private void initScale(Canvas canvas) {
@@ -227,70 +226,38 @@ public class DashBoardView extends View {
 
     }
 
-    private void initRing(Canvas canvas) {
-        paint.setAntiAlias(true);
-        paint.setStrokeWidth(2);
+    private void drawRing(Canvas canvas) {
+
+        paint.setStrokeWidth(1);
         canvas.save();
         canvas.translate(canvas.getWidth()/2, mWidth / 2);
 
-
-        //前100红黄渐变圆环
         paint.setStyle(Paint.Style.FILL);
-        int[] colors = {Color.parseColor("#F95A37"), Color.parseColor("#f9cf45"), Color.parseColor("#00ff00")};
-        float[] positions = {0.5f - 10f/180f * 0.5f, 0.5f + 0.5f * 5f / 6f, 1.0f};
-        SweepGradient sweepGradient = new SweepGradient(0, 0, colors, positions);
-        paint.setShader(sweepGradient);
+        int[] colors = {ContextCompat.getColor(mContext, R.color.ring_end_color), ContextCompat.getColor(mContext, R.color.ring_start_color), ContextCompat.getColor(mContext, R.color.ring_end_color)};
+
+        paint.setShader(new SweepGradient(0, 0, colors, null));
         rect = new RectF( -mLength, -mLength, mLength, mLength);
-        canvas.drawArc(rect, 170, 10f + 180f / 6f * 5f, true, paint);
-
-
-
-        //100之后绿色渐变圆环
-        paint.setStyle(Paint.Style.FILL);
-        canvas.rotate(10,0f,0f);
-        int[] colors2 = {Color.parseColor("#79D062"),  Color.parseColor("#3FBF55")};
-        float[] positions2 = {0.5f + 0.5f * ( 144f / 180f), 1.0f};
-        sweepGradient = new SweepGradient(0, 0, colors2, positions2);
-        paint.setShader(sweepGradient);
-        rect = new RectF( -mLength, -mLength, mLength, mLength);
-        canvas.drawArc(rect, 180f + 180f * (140f / 180f), 180f / 6 + 10, true, paint);
-
-
+        canvas.drawArc(rect, 170, 200f, true, paint);
 
         canvas.restore();
         canvas.save();
-        canvas.translate(canvas.getWidth()/2, mWidth / 2);
+        canvas.translate(canvas.getWidth() / 2, mWidth / 2);
 
         strokePain = new Paint(paint);
 
-        strokePain.setColor(0x3f979797);
-        strokePain.setStrokeWidth(10);
-        strokePain.setShader(null);
-        strokePain.setStyle(Paint.Style.STROKE);
-        canvas.drawArc(rect, 170, 200, true, strokePain);
-
-
-
         canvas.restore();
         canvas.save();
-        canvas.translate(canvas.getWidth()/2, mWidth / 2);
+        canvas.translate(canvas.getWidth() / 2, mWidth / 2);
 
-        //底边水平
         paint.setShader(null);
         paint.setColor(ContextCompat.getColor(mContext, R.color.white));
         paint.setStyle(Paint.Style.FILL);
         canvas.drawRect(-mLength  , (float) (Math.sin(Math.toRadians(10) ) * mLength /3f * 2f), mLength  ,  (float) (Math.sin(Math.toRadians(10)) * mLength  + 100) , paint);
-        canvas.drawRect(-mLength  , (float) (Math.sin(Math.toRadians(10) ) * mLength /3f * 2f), mLength  ,  (float) (Math.sin(Math.toRadians(10) ) * mLength /3f * 2f) , strokePain);
 
-
-        //内部背景色填充
         paint.setColor(ContextCompat.getColor(mContext, R.color.white));
         paint.setShader(null);
         rect = new RectF( - (mLength - mLength / 3f  - 2), -(mLength / 3f * 2f - 2), mLength - mLength / 3f -2 , mLength / 3f * 2f - 2);
-        canvas.drawArc(rect, 170, 200, true, strokePain);
         canvas.drawArc(rect, 0, 360, true, paint);
-
-
 
     }
 
