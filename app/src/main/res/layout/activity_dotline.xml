@@ -93,24 +93,34 @@
             android:background="@drawable/listview_title_bg"
             android:orientation="horizontal">
             <com.jgo.demos.customview.views.DashBoardView
-                android:id="@+id/dash_bord"
+                android:id="@+id/dash_board"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:background="@color/white"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="18dp"/>
-            <Button
-                android:id="@+id/round_btn"
-                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/dash_board"
                 android:layout_marginTop="@dimen/margin_8dp"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/btn_bg"
-                android:layout_below="@+id/dash_bord"
-                android:textColor="@color/dodgerblue"
-                android:text="@string/start_progress"
-                android:visibility="gone"/>
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/dash_board_random_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/margin_8dp"
+                    android:paddingRight="@dimen/margin_8dp"
+                    android:layout_marginTop="@dimen/margin_8dp"
+                    android:gravity="center"
+                    android:background="@drawable/btn_bg"
+                    android:textColor="@color/dodgerblue"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:text="Random Value"/>
+            </LinearLayout>
+
         </RelativeLayout>
 
 

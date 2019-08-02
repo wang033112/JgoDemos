@@ -8,6 +8,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
 
 import com.jgo.demos.R;
+import com.jgo.demos.customview.views.DashBoardView;
 import com.jgo.demos.customview.views.ProgressCircleView;
 
 /**
@@ -18,6 +19,7 @@ import com.jgo.demos.customview.views.ProgressCircleView;
 public class DrawViewActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ProgressCircleView mProgressView;
+    private DashBoardView mDashBoardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,9 @@ public class DrawViewActivity extends AppCompatActivity implements View.OnClickL
 
         mProgressView = findViewById(R.id.progress_circle);
         findViewById(R.id.start_progress).setOnClickListener(this);
+
+        mDashBoardView = findViewById(R.id.dash_board);
+        findViewById(R.id.dash_board_random_btn).setOnClickListener(this);
     }
 
     @Override
@@ -33,6 +38,9 @@ public class DrawViewActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.start_progress :
                 startProgress();
+                break;
+            case R.id.dash_board_random_btn :
+                mDashBoardView.updateProgress((int) (Math.random() * 100));
                 break;
         }
     }
