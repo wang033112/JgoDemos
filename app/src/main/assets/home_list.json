@@ -35,6 +35,9 @@
     "samples": [
       {
         "name": "DrawViewActivity"
+      },
+      {
+        "name": "GraphActivity"
       }
     ]
   }

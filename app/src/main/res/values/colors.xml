@@ -17,5 +17,7 @@
     <color name="ring_start_color">#00FFFF</color>
     <color name="ring_end_color">#006600</color>
 
+    <color name="purple">#800080</color>
+
 
 </resources>

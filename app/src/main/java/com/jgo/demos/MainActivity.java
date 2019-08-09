@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements ExpandableListViewAdapter.OnItemClickListener {
 
     private static final String JSON_FILE = "home_list.json";
+    private static final String PACKAGE = "com.jgo.demos";
     private TextView mTextMessage;
     private ExpandableListView mListView;
     private ExpandableListViewAdapter mListAdapter;
@@ -87,35 +88,39 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
         Intent intent = new Intent();
         switch (name) {
             case "landscape" :
-                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.ImageListViewActivity"));
+                intent.setComponent(new ComponentName(PACKAGE, PACKAGE + ".listview.ImageListViewActivity"));
                 break;
 
             case "PersonList" :
-                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.PersonListActivity"));
+                intent.setComponent(new ComponentName(PACKAGE, PACKAGE + ".listview.PersonListActivity"));
                 break;
 
             case "VideoList" :
-                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.VideoListViewActivity"));
+                intent.setComponent(new ComponentName(PACKAGE, PACKAGE + ".listview.VideoListViewActivity"));
                 break;
 
             case "CouponList" :
-                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.CouponListActivity"));
+                intent.setComponent(new ComponentName(PACKAGE, PACKAGE + ".listview.CouponListActivity"));
                 break;
 
             case "OverlayList" :
-                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.listview.OverlayListActivity"));
+                intent.setComponent(new ComponentName(PACKAGE, PACKAGE + ".listview.OverlayListActivity"));
                 break;
 
             case "Activity_transition" :
-                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.transition.TransitionActivity"));
+                intent.setComponent(new ComponentName(PACKAGE, PACKAGE + ".transition.TransitionActivity"));
                 break;
 
             case "ShareElementActivity" :
-                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.transition.ShareElementActivity"));
+                intent.setComponent(new ComponentName(PACKAGE, PACKAGE + ".transition.ShareElementActivity"));
                 break;
 
             case "DrawViewActivity" :
-                intent.setComponent(new ComponentName("com.jgo.demos","com.jgo.demos.customview.DrawViewActivity"));
+                intent.setComponent(new ComponentName(PACKAGE, PACKAGE + ".customview.DrawViewActivity"));
+                break;
+
+            case "GraphActivity" :
+                intent.setComponent(new ComponentName(PACKAGE, PACKAGE + ".customview.GraphActivity"));
                 break;
         }
 

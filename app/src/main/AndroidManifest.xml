@@ -67,6 +67,11 @@
             android:launchMode="standard">
         </activity>
 
+        <activity
+            android:name="com.jgo.demos.customview.GraphActivity"
+            android:launchMode="standard">
+        </activity>
+
 
     </application>
 
