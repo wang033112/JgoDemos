@@ -9,7 +9,6 @@ import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 
@@ -17,9 +16,7 @@ import com.jgo.demos.R;
 import com.jgo.demos.util.Utils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by ke-oh on 2019/08/11.
@@ -29,25 +26,19 @@ import java.util.Map;
 public class PieView extends View {
 
     private static final int PADDING_FACTOR = (int) Utils.dip2px(20);
-    private static final int PADDING_TEXT = (int) Utils.dip2px(8);
-
-    private String[] mXAxis = new String[]{};
-
     private Context mContext;
 
     private int mWidth;
     private int mHeight;
     private int mRadius;
-    private int mSectionWidth;
-    private Paint mValuePaint;
     private Paint mCirclePaint;
-    private float mProgress;
     private int mCircleSweepAngle;
 
     private RectF mCircleRecF;
     private List<PieFruit> mData = new ArrayList<>();
 
-    private int[] valueColors = new int[]{R.color.dodgerblue, R.color.purple, R.color.cornflower_blue, R.color.chocolate, R.color.gold};
+    private int[] valueColors = new int[]{R.color.dodgerblue, R.color.purple,
+            R.color.cornflower_blue, R.color.chocolate, R.color.gold};
     public PieView(Context context) {
         super(context);
         this.mContext = context;
@@ -74,14 +65,6 @@ public class PieView extends View {
         mCirclePaint.setAntiAlias(true);
         mCirclePaint.setColor(ContextCompat.getColor(mContext, R.color.dodgerblue));
 
-        mValuePaint = new Paint();
-        mValuePaint.setAntiAlias(true);
-        mValuePaint.setStyle(Paint.Style.FILL);
-        mValuePaint.setStrokeWidth(5);
-        mValuePaint.setTextSize(20);
-        mValuePaint.setTextAlign(Paint.Align.CENTER);
-        mValuePaint.setColor(ContextCompat.getColor(mContext, R.color.dodgerblue));
-
     }
 
     @SuppressLint("DrawAllocation")
@@ -92,7 +75,8 @@ public class PieView extends View {
         mHeight = MeasureSpec.getSize(heightMeasureSpec);
 
         mRadius = Math.min(mWidth, mHeight) / 2 - PADDING_FACTOR;
-        mCircleRecF = new RectF(mWidth / 2 - mRadius, mHeight / 2 - mRadius, mWidth / 2 + mRadius, mHeight / 2 + mRadius);
+        mCircleRecF = new RectF(mWidth / 2 - mRadius, mHeight / 2 - mRadius,
+                mWidth / 2 + mRadius, mHeight / 2 + mRadius);
     }
 
     @Override
@@ -107,23 +91,26 @@ public class PieView extends View {
             int totalAngle = 0;
             for (PieFruit pieFruit : mData) {
                 mCirclePaint.setColor(ContextCompat.getColor(mContext, valueColors[loopNum]));
-                int sweepAngle = (int) ((float)pieFruit.percent * 360 / 100);
-
+                int totalSweepAngle = (int) ((float)pieFruit.percent * 360 / 100);
+                int drawSweepAngle = 0;
                 boolean shouldBreak = false;
-                if (startArc + sweepAngle > mCircleSweepAngle) {
-                    sweepAngle = sweepAngle - (startArc + sweepAngle - mCircleSweepAngle);
+                if (startArc + totalSweepAngle > mCircleSweepAngle) {
+                    drawSweepAngle = totalSweepAngle - (startArc + totalSweepAngle - mCircleSweepAngle);
                     shouldBreak = true;
+                } else {
+                    drawSweepAngle = totalSweepAngle;
                 }
 
                 //Fix sweepangle
                 if (loopNum == mData.size() - 1) {
-                    sweepAngle = 360 - totalAngle;
+                    drawSweepAngle = 360 - totalAngle;
                 } else {
-                    totalAngle += sweepAngle;
+                    totalAngle += drawSweepAngle;
                 }
 
-                canvas.drawArc(mCircleRecF, startArc, sweepAngle, true, mCirclePaint);
-                startArc += sweepAngle;
+                canvas.drawArc(getAnimatorRectF(startArc, totalSweepAngle), startArc,
+                        drawSweepAngle, true, mCirclePaint);
+                startArc += drawSweepAngle;
                 loopNum++;
 
                 if (shouldBreak) break;
@@ -134,6 +121,26 @@ public class PieView extends View {
             canvas.drawCircle(mWidth / 2, mHeight / 2, mRadius, mCirclePaint);
         }
 
+    }
+
+    private RectF getAnimatorRectF(int startArc, int sweepAngle) {
+        float factorRadius = 0;
+        if (sweepAngle == 0) {
+            return mCircleRecF;
+        }
+
+        float sectionProgress =  ((float)mCircleSweepAngle - startArc) / sweepAngle;
+        if (sectionProgress > 1) {
+            return mCircleRecF;
+        }
+
+        if (sectionProgress <= 0.5) {
+            factorRadius =  mRadius * (1.0f + 0.2f *  (sectionProgress * 2));
+        } else {
+            factorRadius =  mRadius * (1.0f + 0.2f * ((1.0f - sectionProgress) * 2));
+        }
+        return new RectF(mWidth / 2 - factorRadius, mHeight / 2 - factorRadius,
+                mWidth / 2 + factorRadius, mHeight / 2 + factorRadius);
     }
 
     public void setData(List<PieFruit> dataMap) {
@@ -160,8 +167,8 @@ public class PieView extends View {
 
     public static class PieFruit {
 
-        public String label;
-        public int percent;
+        String label;
+        int percent;
 
         public PieFruit(String label, int percent) {
             this.label = label;
