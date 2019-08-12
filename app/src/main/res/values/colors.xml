@@ -7,6 +7,7 @@
     <color name="light_gray">#c0c0c0</color>
     <color name="gains_boro">#dcdcdc</color>
 
+    <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="white_smoke">#F5F5F5</color>
     <color name="color_background">#e9ebf0</color>
@@ -18,6 +19,10 @@
     <color name="ring_end_color">#006600</color>
 
     <color name="purple">#800080</color>
+    <color name="cornflower_blue">#6495ED</color>
+    <color name="doder_blue">#1E90FF</color>
+    <color name="gold">#FFD700</color>
+    <color name="chocolate">#D2691E</color>
 
 
 </resources>

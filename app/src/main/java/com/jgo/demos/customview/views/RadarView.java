@@ -186,7 +186,7 @@ public class RadarView extends View {
         int loopNum = 0;
         for (List<RadarPoint> points : mDataPointsList) {
             mBackPath.reset();
-            mValuePaint.setColor(ContextCompat.getColor(mContext, valueColors[loopNum]));
+            mValuePaint.setColor(ContextCompat.getColor(mContext, valueColors[loopNum % 2]));
             mBackPath.moveTo(points.get(SECTION_TOP).x, points.get(SECTION_TOP).y);
             mBackPath.lineTo(points.get(SECTION_LEFT_TOP).x, points.get(SECTION_LEFT_TOP).y);
             mBackPath.lineTo(points.get(SECTION_LEFT_BOTTOM).x, points.get(SECTION_LEFT_BOTTOM).y);
@@ -196,7 +196,7 @@ public class RadarView extends View {
             mBackPath.lineTo(points.get(SECTION_TOP).x, points.get(SECTION_TOP).y);
             canvas.drawPath(mBackPath, mValuePaint);
 
-            drawValueCircle(canvas, points, DATA_CIRCLE_OUTER_RADIUS, valueColors[loopNum]);
+            drawValueCircle(canvas, points, DATA_CIRCLE_OUTER_RADIUS, valueColors[loopNum % 2]);
             drawValueCircle(canvas, points, DATA_CIRCLE_INNER_RADIUS, R.color.white);
 
             loopNum++;
