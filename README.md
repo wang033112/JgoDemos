@@ -1,4 +1,7 @@
 # JgoDemos
+APK<BR>
+https://github.com/wang033112/JgoDemos/blob/master/about/JgoDemos.apk
+
 サンプルビュー</BR>
 ![image](https://github.com/wang033112/JgoDemos/blob/master/about/jgodemo.gif)
 
